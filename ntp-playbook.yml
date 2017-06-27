@@ -1,0 +1,20 @@
+- hosts: test-server
+  become: true
+  become_user: root
+  tasks:
+  #Copy a new "ntp.conf file into place, backing up the original if it differs from the copied version
+  - copy:
+      src: /home/admindj/repository/ansible/src/ntp.conf
+      dest: /etc/ntp.conf
+      owner: root
+      group: root
+      mode: 0644
+      backup: yes
+  - name: Make sure NTP is stopped
+      service: name=ntpd state=stopped enabled=yes
+  - name: Sync time initialy
+      shell: ntpdate cs-v-ipa1.champ.aero
+  - name: Make sure NTP is started up
+      service: name=ntpd state=started enabled=yes
+# - name: restart ntpd
+#     service: name=ntpd state=restarted
