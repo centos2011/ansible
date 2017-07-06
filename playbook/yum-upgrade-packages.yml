@@ -1,0 +1,8 @@
+---
+- hosts: test-server
+  become: true
+  become_user: root
+    - name: upgrade all packages
+         yum:
+         name: '*'
+         state: latest

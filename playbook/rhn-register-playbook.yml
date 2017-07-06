@@ -1,0 +1,13 @@
+---
+# Register and auto-subscribe to available content.
+- hosts: rhel-6-servers
+  become: true
+  become_user: root
+  tasks:
+      #Register RHEL6 as user rhel_admin@champ.aero credentials and auto-subscribe.
+      - rhn_register:
+           state: present
+           username: rhel_admin@champ.aero
+           password: RHEL4champ$
+
+
