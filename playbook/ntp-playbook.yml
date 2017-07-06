@@ -12,8 +12,8 @@
       backup: yes
   - name: Make sure NTP is stopped
     service: name=ntpd state=stopped enabled=yes
-# - name: Sync time initialy
-#   shell: ntpdate cs-v-ipa1.champ.aero
+  - name: Sync time initialy
+    shell: ntpdate cs-v-ipa1.champ.aero
 # - name: Make sure NTP is started up
 #   service: name=ntpd state=started enabled=yes
   - name: restart ntpd
