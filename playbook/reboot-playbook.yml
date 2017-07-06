@@ -1,9 +1,18 @@
+---
 - hosts: testserver
-  become: true
-  become_user: root
   tasks:
-    - name: Reboot server
-      command: /sbin/shutdown now -r
+    - name: restart server
+      shell: sleep 2 && shutdown -r now "Ansible updates triggered"
+      async: 1
+      poll: 0
+      become: true
+      become_user: root
+      ignore_errors: true
 
-    - name: Wait for the server to finish rebooting
-      local_action: wait_for host="{{ inventory_hostname }}" search_regex=OpenSSH port=22 timeout=300
+    - name: wait for server {{ ansible_ssh_host | default(inventory_hostname) }} to come back online
+      wait_for:
+        port: 22
+        state: started
+        host: '{{ ansible_ssh_host | default(inventory_hostname) }}'
+        delay: 30
+      delegate_to: localhost
