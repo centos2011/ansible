@@ -1,8 +1,0 @@
-- hosts: csp-demo-server
-  become: true
-  become_user: root
-  tasks:
-    - name: install the latest version of ipa-client
-      yum:
-        name: ipa-client
-        state: latest

@@ -1,9 +1,0 @@
-- hosts: testserver
-  become: true
-  become_user: root
-  tasks:
-    - name: Reboot server
-      command: /sbin/shutdown now -r
-
-    - name: Wait for the server to finish rebooting
-      local_action: wait_for host="{{ inventory_hostname }}" search_regex=OpenSSH port=22 timeout=300
