@@ -1,8 +1,8 @@
 ---
-- hosts: testserver
+- hosts: testservers
   tasks:
     - name: restart server
-      shell: sleep 2 && shutdown -r now "Ansible updates triggered"
+      shell: sleep 2 && /sbin/shutdown -r now "Ansible shutdown server triggered"
       async: 1
       poll: 0
       become: true

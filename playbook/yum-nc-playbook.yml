@@ -1,0 +1,8 @@
+- hosts: rhel7servers
+  become: true
+  become_user: root
+  tasks:
+    - name: install the latest version of ncat
+      yum:
+        name: nc
+        state: latest

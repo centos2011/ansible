@@ -1,4 +1,4 @@
-- hosts: rhel6servers
+- hosts: rhel7ervers
   become: true
   become_user: root
   tasks:
