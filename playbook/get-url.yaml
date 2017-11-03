@@ -1,0 +1,10 @@
+- hosts: test-server
+  become: true
+  become_user: root
+  tasks:
+  #download file from url http://bamboo.champ.aero:8085/browse/CSPHF-CSP1620FINALGENHF-413/artifact/JOB1/Cargospot-Package/install.zip
+  - name: download zip
+    get_url:
+       url: http://bamboo.champ.aero:8085/browse/CSPHF-CSP1620FINALGENHF-413/artifact/JOB1/Cargospot-Package/install.zip
+       dest: /tmp/new.zip
+       mode: 0440

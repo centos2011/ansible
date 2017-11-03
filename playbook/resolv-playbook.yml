@@ -1,4 +1,4 @@
-- hosts: rhel7ervers
+- hosts: csp-ipa-enroll
   become: true
   become_user: root
   tasks:

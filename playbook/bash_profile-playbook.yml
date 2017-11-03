@@ -1,10 +1,10 @@
-- hosts: rhel6servers
+- hosts: rhel7servers
   tasks:
-  #Copy a new "/home/admindj/ into place, backing up the original if it differs from the copied version
+  #Copy a new "/home/admjosde/ into place, backing up the original if it differs from the copied version
   - copy:
       src: /home/admindj/repository/ansible/src/.bash_profile
-      dest: /home/admindj/.bash_profile
-      owner: admindj
+      dest: /home/admjosde/.bash_profile
+      owner: admjosde
       #group: root
       #mode: 0644
       backup: yes

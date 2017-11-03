@@ -1,5 +1,5 @@
 ---
-- hosts: testservers
+- hosts: csp-pd
   tasks:
     - name: restart server
       shell: sleep 2 && /sbin/shutdown -r now "Ansible shutdown server triggered"
