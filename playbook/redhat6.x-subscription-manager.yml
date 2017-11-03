@@ -5,6 +5,6 @@
       - name: Register RHEL6 as user rhel_admin@champ.aero credentials and auto-subscribe.
         redhat_subscription:
           state: present
-          username: user #change with the correct username
-          password: password #change with the correct password
+          username: user      ##change with the correct username
+          password: password  ##change with the correct password
           autosubscribe: yes
