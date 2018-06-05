@@ -1,0 +1,2 @@
+[apache]
+test_sshd  ansible_connection=docker
