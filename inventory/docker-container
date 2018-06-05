@@ -1,0 +1,2 @@
+test_sshd  ansible_connection=docker
+postgres-container ansible_connection=docker
