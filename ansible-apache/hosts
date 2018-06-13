@@ -1,5 +1,6 @@
 [apache]
 test_sshd  ansible_connection=docker
+#test_httpd  ansible_connection=docker
 
-[container]
-test_sshd2 ansible_connection=docker
+#[container]
+#test_sshd2 ansible_connection=docker
